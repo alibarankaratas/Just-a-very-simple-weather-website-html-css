@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karataş Weather | Sadece Türkiye</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="gray">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">BlackWeather.Net</span>
+      <span class="tag">Türkiye için en sade hava durumu sitesi</span>
+    </div>
+
+    <div class="controls">
+      <div class="today-pill" title="Bugünün tarihi">
+        <span class="today-label">Bugün</span>
+        <span id="todayDate" class="today-date">—</span>
+      </div>
+
+      <div class="theme-switch" aria-label="Tema değiştir">
+        <button class="theme-btn" data-theme="white" type="button">Beyaz</button>
+        <button class="theme-btn" data-theme="gray" type="button">Gri</button>
+        <button class="theme-btn" data-theme="black" type="button">Siyah</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card search-card">
+      <h1 class="title">Hava Durumunu Kontrol Et</h1>
+      <p class="subtitle">Bir Türkiye şehri yazın (örn: Ankara, İzmir, İstanbul, Antalya, Trabzon…)</p>
+
+      <form class="search" id="searchForm">
+        <input
+          class="search-input"
+          id="cityInput"
+          type="text"
+          placeholder="Şehir adi…"
+          autocomplete="off"
+          aria-label="Şehir adi"
+        />
+        <button class="search-btn" id="searchBtn" type="submit">Ara</button>
+      </form>
+    </section>
+
+    <section class="grid">
+      <section class="card result-card" aria-live="polite">
+        <div class="result-head">
+          <div>
+            <h2 id="cityName" class="city">—</h2>
+            <p id="conditionText" class="condition">Bekleniyor…</p>
+          </div>
+
+          <div class="temp-block">
+            <div id="tempNow" class="temp">--°</div>
+            <div class="temp-sub">Hissedilen <span id="feelsLike">--</span>°</div>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <span class="metric-label">Nem</span>
+            <span id="humidity" class="metric-value">--%</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Rüzgar</span>
+            <span id="wind" class="metric-value">-- km/s</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Görüş</span>
+            <span id="visibility" class="metric-value">-- km</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">UV</span>
+            <span id="uv" class="metric-value">—</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="forecast">
+          <h3 class="section-title">5 Günlük Özet</h3>
+          <div class="forecast-row" id="forecastRow"></div>
+        </div>
+
+        <p id="errorMessage" class="error-message"></p>
+      </section>
+
+      <aside class="card side-card">
+        <h3 class="section-title">İletişim</h3>
+        <ul class="list">
+          <li>E-posta: <b>karatasalibaran05@gmail.com</b></li>
+          <li>Telefon: <b>+90 541 234 5678</b></li>
+          <li>Instagram: @karatasalibaran</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h3 class="section-title">Durum</h3>
+        <p class="status">
+          <span class="dot"></span>
+          <span id="statusText">Hazir</span>
+        </p>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="yearNow"></span> BlackWeather.Net</span>
+      <span class="sep">•</span>
+      <span>Sadece Türkiye • Minimal • Hizli</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
